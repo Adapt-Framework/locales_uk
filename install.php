@@ -241,7 +241,7 @@ $sql->insert_into('country_phone_data_type',
     array(
         $country_id,
         $home['data_type_id'],
-        'Home',
+        'Office',
         $adapt->data_source->sql('now()'),
         $adapt->data_source->sql('now()')
     )
@@ -350,7 +350,7 @@ $sql->insert_into('country_address_format',
         $adapt->data_source->sql('now()'),
         $adapt->data_source->sql('now()')
     )
-);
+)->execute();
 
 
 //TODO: If this is the only locales file installed then we need to set the default settings in the 'locales' bundle

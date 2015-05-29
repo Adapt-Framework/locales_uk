@@ -12,5 +12,6 @@
         <depends_on>
             <bundle>locales</bundle>
         </depends_on>
+        <installed>Yes</installed>
     </bundle>
 </adapt_framework>

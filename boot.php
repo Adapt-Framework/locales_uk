@@ -14,7 +14,7 @@ $adapt->sanitize->add_validator('uk_phone_landline', "/^(\+44|0)(1[0-9]{8,9}|[23
 $adapt->sanitize->add_validator('uk_phone_premium', "/^(\+44|0)(9[0-9]{9,9})$/");
 
 /* Add formatters */
-$adapt->sanitizers->add_formatter('uk_phone', function($value){
+$adapt->sanitize->add_formatter('uk_phone', function($value){
     if (preg_match("/011\d{8,8}/", $value)){
         //(011x) xxx xxxx
         return substr($value, 0, 4) . ' ' . substr($value, 4, 3) . ' ' . substr($value, 7);
