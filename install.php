@@ -204,6 +204,8 @@ $country_id = $sql->insert_into(
 )->execute()
 ->id();
 
+//print "COUNTRY ID: {$country_id}";
+//exit(1);
 
 /*
  * Add the phone types
@@ -213,144 +215,100 @@ $mobile = $adapt->data_source->get_data_type('uk_phone_mobile');
 $work = $adapt->data_source->get_data_type('uk_phone');
 
 
-$sql->insert_into('country_phone_data_type',
-    array(
-        'country_id',
-        'data_type_id',
-        'label',
-        'date_created',
-        'date_modified'
-    )
-)->values(
-    array(
-        $country_id,
-        $home['data_type_id'],
-        'Home',
-        $adapt->data_source->sql('now()'),
-        $adapt->data_source->sql('now()')
-    )
-)->values(
-    array(
-        $country_id,
-        $mobile['data_type_id'],
-        'Mobile',
-        $adapt->data_source->sql('now()'),
-        $adapt->data_source->sql('now()')
-    )
-)->values(
-    array(
-        $country_id,
-        $home['data_type_id'],
-        'Office',
-        $adapt->data_source->sql('now()'),
-        $adapt->data_source->sql('now()')
-    )
-)->execute();
+$model = new \model_country_phone_data_type();
+$model->country_id = $country_id;
+$model->data_type_id = $home['data_type_id'];
+$model->label = "Home";
+$model->save();
+
+$model = new \model_country_phone_data_type();
+$model->country_id = $country_id;
+$model->data_type_id = $mobile['data_type_id'];
+$model->label = "Mobile";
+$model->save();
+
+$model = new \model_country_phone_data_type();
+$model->country_id = $country_id;
+$model->data_type_id = $work['data_type_id'];
+$model->label = "Office";
+$model->save();
 
 /*
  * Add the address format
  */
 
-$sql->insert_into('country_address_format',
-    array(
-        'country_id',
-        'priority',
-        'name',
-        'label',
-        'data_type_id',
-        'max_length',
-        'date_created',
-        'date_modified'
-    )
-)->values(
-    array(
-        $country_id,
-        1,
-        'flat_details',
-        'Flat details',
-        $adapt->data_source->get_data_type_id('varchar'),
-        16,
-        $adapt->data_source->sql('now()'),
-        $adapt->data_source->sql('now()')
-    )
-)->values(
-    array(
-        $country_id,
-        2,
-        'buliding_name',
-        'House / Building name',
-        $adapt->data_source->get_data_type_id('varchar'),
-        32,
-        $adapt->data_source->sql('now()'),
-        $adapt->data_source->sql('now()')
-    )
-)->values(
-    array(
-        $country_id,
-        3,
-        'building_number',
-        'Building number',
-        $adapt->data_source->get_data_type_id('varchar'),
-        16,
-        $adapt->data_source->sql('now()'),
-        $adapt->data_source->sql('now()')
-    )
-)->values(
-    array(
-        $country_id,
-        4,
-        'street',
-        'Street',
-        $adapt->data_source->get_data_type_id('varchar'),
-        64,
-        $adapt->data_source->sql('now()'),
-        $adapt->data_source->sql('now()')
-    )
-)->values(
-    array(
-        $country_id,
-        5,
-        'district',
-        'District',
-        $adapt->data_source->get_data_type_id('varchar'),
-        64,
-        $adapt->data_source->sql('now()'),
-        $adapt->data_source->sql('now()')
-    )
-)->values(
-    array(
-        $country_id,
-        6,
-        'city',
-        'Town / City',
-        $adapt->data_source->get_data_type_id('varchar'),
-        64,
-        $adapt->data_source->sql('now()'),
-        $adapt->data_source->sql('now()')
-    )
-)->values(
-    array(
-        $country_id,
-        7,
-        'county',
-        'county',
-        $adapt->data_source->get_data_type_id('varchar'),
-        64,
-        $adapt->data_source->sql('now()'),
-        $adapt->data_source->sql('now()')
-    )
-)->values(
-    array(
-        $country_id,
-        8,
-        'postcode',
-        'Postcode',
-        $adapt->data_source->get_data_type_id('uk_postcode'),
-        12,
-        $adapt->data_source->sql('now()'),
-        $adapt->data_source->sql('now()')
-    )
-)->execute();
+$model = new \model_country_address_format();
+$model->country_id = $country_id;
+$model->priority = 1;
+$model->name = 'flat_details';
+$model->label = 'Flat details';
+$model->data_type_id = $adapt->data_source->get_data_type_id('varchar');
+$model->max_length = 16;
+$model->save();
+
+$model = new \model_country_address_format();
+$model->country_id = $country_id;
+$model->priority = 2;
+$model->name = 'building_name';
+$model->label = 'House / Building name';
+$model->data_type_id = $adapt->data_source->get_data_type_id('varchar');
+$model->max_length = 32;
+$model->save();
+
+$model = new \model_country_address_format();
+$model->country_id = $country_id;
+$model->priority = 3;
+$model->name = 'building_number';
+$model->label = 'Building number';
+$model->data_type_id = $adapt->data_source->get_data_type_id('varchar');
+$model->max_length = 16;
+$model->save();
+
+$model = new \model_country_address_format();
+$model->country_id = $country_id;
+$model->priority = 4;
+$model->name = 'street';
+$model->label = 'Street';
+$model->data_type_id = $adapt->data_source->get_data_type_id('varchar');
+$model->max_length = 64;
+$model->save();
+
+$model = new \model_country_address_format();
+$model->country_id = $country_id;
+$model->priority = 5;
+$model->name = 'district';
+$model->label = 'District';
+$model->data_type_id = $adapt->data_source->get_data_type_id('varchar');
+$model->max_length = 64;
+$model->save();
+
+$model = new \model_country_address_format();
+$model->country_id = $country_id;
+$model->priority = 6;
+$model->name = 'city';
+$model->label = 'Town / City';
+$model->data_type_id = $adapt->data_source->get_data_type_id('varchar');
+$model->max_length = 64;
+$model->save();
+
+$model = new \model_country_address_format();
+$model->country_id = $country_id;
+$model->priority = 7;
+$model->name = 'county';
+$model->label = 'County';
+$model->data_type_id = $adapt->data_source->get_data_type_id('varchar');
+$model->max_length = 64;
+$model->save();
+
+$model = new \model_country_address_format();
+$model->country_id = $country_id;
+$model->priority = 8;
+$model->name = 'postcode';
+$model->label = 'Postcode';
+$model->data_type_id = $adapt->data_source->get_data_type_id('uk_postcode');
+$model->max_length = 12;
+$model->save();
+ 
 
 
 //TODO: If this is the only locales file installed then we need to set the default settings in the 'locales' bundle
