@@ -309,7 +309,7 @@ $model->data_type_id = $adapt->data_source->get_data_type_id('uk_postcode');
 $model->max_length = 12;
 $model->save();
  
-
+ 
 
 //TODO: If this is the only locales file installed then we need to set the default settings in the 'locales' bundle
 
