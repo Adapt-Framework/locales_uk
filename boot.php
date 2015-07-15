@@ -12,6 +12,7 @@ $adapt->sanitize->add_validator('uk_phone_office', "^(\+44|0)(1[0-9]{8,9}|[2358]
 $adapt->sanitize->add_validator('uk_phone_mobile', "^(\+44|0)(7[0-9]{9,9})$");
 $adapt->sanitize->add_validator('uk_phone_landline', "^(\+44|0)(1[0-9]{8,9}|[2358][0-9]{9,9}|[58]00[0-9]{6,6})$");
 $adapt->sanitize->add_validator('uk_phone_premium', "^(\+44|0)(9[0-9]{9,9})$");
+$adapt->sanitize->add_validator('uk_postcode', "^(GIR( )+0AA|[A-PR-UWYZ]([0-9]{1,2}|([A-HK-Y][0-9]|[A-HK-Y][0-9]([0-9]|[ABEHMNPRV-Y]))|[0-9][A-HJKPS-UW])( )?[0-9][ABD-HJLNP-UW-Z]{2})$");
 
 /* Add formatters */
 $adapt->sanitize->add_format('uk_phone', function($value){
@@ -101,5 +102,24 @@ $adapt->sanitize->add_format('uk_phone', function($value){
     
     return value;
 }");
+
+$adapt->sanitize->add_format('uk_postcode',
+    function($value){
+        return strtoupper(substr($value, 0, strlen($value) - 3) . " " . substr($value, strlen($value) - 3));
+    }, "function(value){
+        value = value.toUpperCase();
+        return value.substr(0, value.length - 3) + ' ' + value.substr(value.length - 1);
+    }"
+);
+
+/* Add unformatters */
+$adapt->sanitize->add_unformat('uk_postcode',
+    function($value){
+        return strtoupper(preg_replace("/[^A-Za-z0-9]/", "", $value));
+    }, "function(value){
+        value = value.replace(/[^A-Za-z0-9]/, '');
+        return value.toUpperCase();
+    }"
+);
 
 ?>

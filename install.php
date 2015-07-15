@@ -133,11 +133,11 @@ $data_types = array(
         'bundle_name' => 'locales_uk',
         'name' => 'uk_county',
         'based_on_data_type' => "enum('Aberdeen','Aberdeenshire','Angus','Argyll and Bute','Bath and North East Somerset','Bedford','Berkshire','Blackburn with Darwen','Blackpool','Blaenau Gwent','Bournemouth','Bridgend','Brighton and Hove','Bristol','Buckinghamshire','Cambridgeshire','Caerphilly','Cardiff','Carmarthenshire','Central Bedfordshire','Ceredigion','Cheshire East','Cheshire West and Chester','Clackmannanshire','Conwy','Cornwall','Cumbria','Darlington','Denbighshire','Derby','Derbyshire','Devon','Dorset','Dumfries and Galloway','Dundee','Durham','East Ayrshire','East Dunbartonshire','East Lothian','East Renfrewshire','East Riding of Yorkshire','East Sussex','Edinburgh','Essex','Falkirk','Fife','Flintshire','Glasgow','Gloucestershire','Greater London','Greater Manchester','Gwynedd','Halton','Hampshire','Hartlepool','Herefordshire','Hertfordshire','Highland','Inverclyde','Isle of Anglesey','Isle of Wight','Kent','Kingston upon Hull','Lancashire','Leicester','Leicestershire','Lincolnshire','City of London','Luton','Medway','Merseyside','Merthyr Tydfil','Middlesbrough','Midlothian','Milton Keynes','Monmouthshire','Moray','Na h-Eileanan Siar (Western Isles)','Neath Port Talbot','Newport','Norfolk','Northamptonshire','North Ayrshire','North East Lincolnshire','Northern Ireland','North Lanarkshire','North Lincolnshire','North Somerset','Northumberland','North Yorkshire','Nottingham','Nottinghamshire','Orkney Islands','Oxfordshire','Pembrokeshire','Perth & Kinross','Peterborough','Plymouth','Poole','Portsmouth','Powys','Redcar and Cleveland','Renfrewshire','Rhondda Cynon Taff','Rutland','Scottish Borders','Shetland Islands','Shropshire','Somerset','Southampton','South Ayrshire','Southend-on-Sea','South Gloucestershire','South Lanarkshire','South Yorkshire','Staffordshire','Stirling','Stockton-on-Tees','Stoke-on-Trent','Suffolk','Surrey','Swansea','Swindon','Telford and Wrekin','Thurrock','Torbay','Torfaen','Tyne and Wear','Vale of Glamorgan','Warrington','Warwickshire','West Dunbartonshire','West Lothian','West Midlands','West Sussex','West Yorkshire','Wiltshire','Worcestershire','Wrexham','York','Isles of Scilly')",
-        'validator' => 'uk_county',
-        'formatter' => 'uk_county',
-        'unformatter' => 'uk_county',
+        'validator' => null,
+        'formatter' => null,
+        'unformatter' => null,
         'datetime_format' => null,
-        'max_length' => 64,
+        'max_length' => null,
         'date_created' => null
     )
 );
