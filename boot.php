@@ -14,6 +14,61 @@ $adapt->sanitize->add_validator('uk_phone_landline', "^(\+44|0)(1[0-9]{8,9}|[235
 $adapt->sanitize->add_validator('uk_phone_premium', "^(\+44|0)(9[0-9]{9,9})$");
 $adapt->sanitize->add_validator('uk_postcode', "^(GIR( )+0AA|[A-PR-UWYZ]([0-9]{1,2}|([A-HK-Y][0-9]|[A-HK-Y][0-9]([0-9]|[ABEHMNPRV-Y]))|[0-9][A-HJKPS-UW])( )?[0-9][ABD-HJLNP-UW-Z]{2})$");
 
+//$adapt->sanitize->add_validator(
+//    'uk_date',
+//    function($value){
+//        
+//    },
+//    "function (value){
+//        console.log('Validating ' + value + ' as uk_date');
+//        var valid = false;
+//        value = adapt.sanitize.unformat('date', value);
+//        
+//        if (value.length == 8){
+//            value = adapt.date.convert_date('dmY', 'Ymd', value);
+//            valid = adapt.sanitize.validate('date', value);
+//        }
+//        
+//        return valid;
+//    }"
+//);
+
+//$adapt->sanitize->add_validator(
+//    'uk_time',
+//    function($value){
+//        
+//    },
+//    "function(value){
+//        var valid = false;
+//        value = adapt.sanitize.unformat('date', value);
+//        
+//        if (value.length == 4){
+//            value = adapt.date.convert_date('Hi', 'His', value);
+//            valid = adapt.sanitize('time', value);
+//        }
+//        
+//        return valid;
+//    }"
+//);
+//
+//$adapt->sanitize->add_validator(
+//    'uk_datetime',
+//    function($value){
+//        
+//    },
+//    "function(value){
+//        var valid = false;
+//        value = adapt.sanitize.unformat('date', value);
+//        
+//        if (value.length == 12){
+//            value = adapt.date.convert_date('dmYHi', 'YmdHis', value);
+//            valid = adapt.sanitize('datetime', value);
+//        }
+//        
+//        return valid;
+//    }"
+//);
+
 /* Add formatters */
 $adapt->sanitize->add_format('uk_phone', function($value){
     if (preg_match("/011\d{8,8}/", $value)){
@@ -112,6 +167,34 @@ $adapt->sanitize->add_format('uk_postcode',
     }"
 );
 
+$adapt->sanitize->add_format('uk_date',
+    function($value){
+        return \frameworks\adapt\date::convert_date('Y-m-d', 'd/m/Y', $value);
+    },
+    "function(value){
+        return adapt.date.convert_date('Y-m-d', 'd/m/Y', value);
+    }"
+);
+
+$adapt->sanitize->add_format('uk_time',
+    function($value){
+        return \frameworks\adapt\date::convert_date('H:i:s', 'H:i', $value);
+    },
+    "function(value){
+        return adapt.date.convert_date('H:i:s', 'H:i', value);
+    }"
+);
+
+$adapt->sanitize->add_format('uk_datetime',
+    function($value){
+        return \frameworks\adapt\date::convert_date('Y-m-d H:i:s', 'd/m/Y H:i', $value);
+    },
+    "function(value){
+        return adapt.date.convert_date('Y-m-d H:i:s', 'd/m/Y H:i', value);
+    }"
+);
+
+
 /* Add unformatters */
 $adapt->sanitize->add_unformat('uk_postcode',
     function($value){
@@ -121,5 +204,39 @@ $adapt->sanitize->add_unformat('uk_postcode',
         return value.toUpperCase();
     }"
 );
+
+$adapt->sanitize->add_unformat('uk_date',
+    function($value){
+        $value = preg_replace("/[^0-9]/", '', $value);
+        return \frameworks\adapt\date::convert_date('dmY', 'Y-m-d', $value);
+    },
+    "function(value){
+        value = value.replace(/[^0-9]/g, '');
+        return adapt.date.convert_date('dmY', 'Y-m-d', value);
+    }"
+);
+
+$adapt->sanitize->add_unformat('uk_time',
+    function($value){
+        $value = preg_replace("/[^0-9]/", '', $value);
+        return \frameworks\adapt\date::convert_date('Hi', 'H:i:s', $value);
+    },
+    "function(value){
+        value = value.replace(/[^0-9]/g, '');
+        return adapt.date.convert_date('Hi', 'H:i:s', value);
+    }"
+);
+
+$adapt->sanitize->add_unformat('uk_datetime',
+    function($value){
+        $value = preg_replace("/[^0-9]/", '', $value);
+        return \frameworks\adapt\date::convert_date('dmYHi', 'Y-m-d H:i:s', $value);
+    },
+    "function(value){
+        value = value.replace(/[^0-9]/g, '');
+        return adapt.date.convert_date('dmYHi', 'Y-m-d H:i:s', value);
+    }"
+);
+
 
 ?>

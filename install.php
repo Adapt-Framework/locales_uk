@@ -87,8 +87,8 @@ $data_types = array(
         'name' => 'uk_date',
         'based_on_data_type' => 'date',
         'validator' => 'date',
-        'formatter' => null,
-        'unformatter' => null,
+        'formatter' => 'uk_date',
+        'unformatter' => 'uk_date',
         'datetime_format' => 'd/m/Y',
         'max_length' => null,
         'date_created' => null
@@ -98,8 +98,8 @@ $data_types = array(
         'name' => 'uk_time',
         'based_on_data_type' => 'time',
         'validator' => 'time',
-        'formatter' => null,
-        'unformatter' => null,
+        'formatter' => 'uk_time',
+        'unformatter' => 'uk_time',
         'datetime_format' => 'H:i',
         'max_length' => null,
         'date_created' => null
@@ -109,8 +109,8 @@ $data_types = array(
         'name' => 'uk_datetime',
         'based_on_data_type' => 'datetime',
         'validator' => 'datetime',
-        'formatter' => null,
-        'unformatter' => null,
+        'formatter' => 'uk_datetime',
+        'unformatter' => 'uk_datetime',
         'datetime_format' => 'd/m/Y H:i',
         'max_length' => null,
         'date_created' => null
@@ -308,10 +308,7 @@ $model->label = 'Postcode';
 $model->data_type_id = $adapt->data_source->get_data_type_id('uk_postcode');
 $model->max_length = 12;
 $model->save();
- 
- 
 
-//TODO: If this is the only locales file installed then we need to set the default settings in the 'locales' bundle
 
 
 
