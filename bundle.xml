@@ -17,9 +17,15 @@
             </bundle>
             <bundle>
                 <name>adapt</name>
-                <version>1.0</version>
+                <version>2.0</version>
             </bundle>
         </depends_on>
+        <works_with>
+            <bundle>
+                <name>locales</name>
+                <version>1.0</version>
+            </bundle>
+        </works_with>
         <schema>
             <add>
                 <table name="data_type">
@@ -118,86 +124,94 @@
                     <record>
                         <name>uk</name>
                         <label>United Kingdom</label>
-                        <date_data_type_id get-from-table-name="data_type" get-from-field-name="data_type_id" where-field-name="name" is-value="uk_date" />
-                        <time_data_type_id get-from-table-name="data_type" get-from-field-name="data_type_id" where-field-name="name" is-value="uk_time" />
-                        <datetime_data_type_id get-from-table-name="data_type" get-from-field-name="data_type_id" where-field-name="name" is-value="uk_datetime" />
+                        <date_data_type_id get-from="data_type" where-name-is="uk_date" />
+                        <time_data_type_id get-from="data_type" where-name-is="uk_time" />
+                        <datetime_data_type_id get-from="data_type" where-name-is="uk_datetime" />
                     </record>
                 </table>
                 <table name="country_phone_data_type">
                     <record>
-                        <country_id get-from-table-name="country" get-from-field-name="country_id" where-field-name="name" is-value="uk" />
+                        <country_id get-from="country" where-name-is="uk" />
                         <name>uk_phone_home</name>
                         <label>Home</label>
-                        <data_type_id get-from-table-name="data_type" get-from-field-name="data_type_id" where-field-name="name" is-value="uk_phone_home" />
+                        <data_type_id get-from="data_type" where-name-is="uk_phone_home" />
                     </record>
                     <record>
-                        <country_id get-from-table-name="country" get-from-field-name="country_id" where-field-name="name" is-value="uk" />
+                        <country_id get-from="country" where-name-is="uk" />
                         <name>uk_phone_mobile</name>
                         <label>Mobile</label>
-                        <data_type_id get-from-table-name="data_type" get-from-field-name="data_type_id" where-field-name="name" is-value="uk_phone_mobile" />
+                        <data_type_id get-from="data_type" where-name-is="uk_phone_mobile" />
                     </record>
                     <record>
-                        <country_id get-from-table-name="country" get-from-field-name="country_id" where-field-name="name" is-value="uk" />
+                        <country_id get-from="country" where-name-is="uk" />
                         <name>uk_phone_office</name>
                         <label>Work</label>
-                        <data_type_id get-from-table-name="data_type" get-from-field-name="data_type_id" where-field-name="name" is-value="uk_phone_office" />
+                        <data_type_id get-from="data_type" where-name-is="uk_phone_office" />
                     </record>
                 </table>
                 <table name="country_address_format">
                     <record>
+                        <country_id get-from="country" where-name-is="uk" />
                         <priority>1</priority>
                         <name>uk_flat_details</name>
                         <label>Flat details</label>
-                        <data_type_id get-from-table-name="data_type" get-from-field-name="data_type_id" where-field-name="name" is-value="varchar" />
+                        <data_type_id get-from="data_type" where-name-is="varchar" />
                         <max_length>16</max_length>
                     </record>
                     <record>
+                        <country_id get-from="country" where-name-is="uk" />
                         <priority>2</priority>
                         <name>uk_building_name</name>
                         <label>House or Building Name</label>
-                        <data_type_id get-from-table-name="data_type" get-from-field-name="data_type_id" where-field-name="name" is-value="varchar" />
+                        <data_type_id get-from="data_type" where-name-is="varchar" />
                         <max_length>16</max_length>
                     </record>
                     <record>
+                        <country_id get-from="country" where-name-is="uk" />
                         <priority>3</priority>
                         <name>uk_building_number</name>
                         <label>House or Building Number</label>
-                        <data_type_id get-from-table-name="data_type" get-from-field-name="data_type_id" where-field-name="name" is-value="varchar" />
+                        <data_type_id get-from="data_type" where-name-is="varchar" />
                         <max_length>16</max_length>
                     </record>
                     <record>
+                        <country_id get-from="country" where-name-is="uk" />
                         <priority>4</priority>
                         <name>uk_street</name>
                         <label>Street</label>
-                        <data_type_id get-from-table-name="data_type" get-from-field-name="data_type_id" where-field-name="name" is-value="varchar" />
+                        <data_type_id get-from="data_type" where-name-is="varchar" />
                         <max_length>64</max_length>
                     </record>
                     <record>
+                        <country_id get-from="country" where-name-is="uk" />
                         <priority>5</priority>
                         <name>uk_district</name>
                         <label>District</label>
-                        <data_type_id get-from-table-name="data_type" get-from-field-name="data_type_id" where-field-name="name" is-value="varchar" />
+                        <data_type_id get-from="data_type" where-name-is="varchar" />
                         <max_length>64</max_length>
                     </record>
                     <record>
+                        <country_id get-from="country" where-name-is="uk" />
                         <priority>6</priority>
                         <name>uk_city</name>
                         <label>Town or City</label>
-                        <data_type_id get-from-table-name="data_type" get-from-field-name="data_type_id" where-field-name="name" is-value="varchar" />
+                        <data_type_id get-from="data_type" where-name-is="varchar" />
                         <max_length>64</max_length>
                     </record>
                     <record>
+                        <country_id get-from="country" where-name-is="uk" />
                         <priority>7</priority>
                         <name>uk_county</name>
                         <label>County</label>
-                        <data_type_id get-from-table-name="data_type" get-from-field-name="data_type_id" where-field-name="name" is-value="varchar" />
+                        <data_type_id get-from="data_type" where-name-is="varchar" />
                         <max_length>64</max_length>
                     </record>
                     <record>
+                        <country_id get-from="country" where-name-is="uk" />
                         <priority>8</priority>
                         <name>uk_postcode</name>
                         <label>Postcode</label>
-                        <data_type_id get-from-table-name="data_type" get-from-field-name="data_type_id" where-field-name="name" is-value="uk_postcode" />
+                        <data_type_id get-from="data_type" where-name-is="uk_postcode" />
                         <max_length>12</max_length>
                     </record>
                 </table>
