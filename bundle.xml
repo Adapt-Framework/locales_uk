@@ -221,6 +221,7 @@
                         <short_code>en</short_code>
                         <long_code>en-uk</long_code>
                         <label>English (UK)</label>
+                        <name>English (UK)</name>
                     </record>
                 </table>
                 <table name="currency">
