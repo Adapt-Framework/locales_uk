@@ -215,6 +215,26 @@
                         <max_length>12</max_length>
                     </record>
                 </table>
+                <table name="language">
+                    <record>
+                        <name>english-uk</name>
+                        <short_code>en</short_code>
+                        <long_code>en-uk</long_code>
+                        <name>English (UK)</name>
+                    </record>
+                </table>
+                <table name="currency">
+                    <record>
+                        <name>british_pounds</name>
+                        <code>GBP</code>
+                        <label>Great British Pounds</label>
+                        <symbol>£</symbol>
+                        <html_symbol>&amp;pound;</html_symbol>
+                        <decimal_places>2</decimal_places>
+                        <decimal_separater>.</decimal_separater>
+                        <thousand_separater>,</thousand_separater>
+                    </record>
+                </table>
             </add>
         </schema>
         <settings>
