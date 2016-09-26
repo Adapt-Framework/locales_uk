@@ -217,11 +217,10 @@
                 </table>
                 <table name="language">
                     <record>
-                        <name>english-uk</name>
+                        <name>english_uk</name>
                         <short_code>en</short_code>
                         <long_code>en-uk</long_code>
                         <label>English (UK)</label>
-                        <name>English (UK)</name>
                     </record>
                 </table>
                 <table name="currency">
