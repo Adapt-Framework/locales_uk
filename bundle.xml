@@ -16,6 +16,10 @@
                 <version>1.0</version>
             </bundle>
             <bundle>
+                <name>currency_gbp</name>
+                <version>1.0</version>
+            </bundle>
+            <bundle>
                 <name>adapt</name>
                 <version>2.0</version>
             </bundle>
@@ -127,6 +131,9 @@
                         <date_data_type_id get-from="data_type" where-name-is="uk_date" />
                         <time_data_type_id get-from="data_type" where-name-is="uk_time" />
                         <datetime_data_type_id get-from="data_type" where-name-is="uk_datetime" />
+                        <currency_id get-form="currency" where-name-is="gbp" />
+                        <currency_decimal_separater>.</currency_decimal_separater>
+                        <currency_thousand_separater>,</currency_thousand_separater>
                     </record>
                 </table>
                 <table name="country_phone_data_type">
@@ -221,18 +228,6 @@
                         <short_code>en</short_code>
                         <long_code>en-uk</long_code>
                         <label>English (UK)</label>
-                    </record>
-                </table>
-                <table name="currency">
-                    <record>
-                        <name>british_pounds</name>
-                        <code>GBP</code>
-                        <label>Great British Pounds</label>
-                        <symbol>£</symbol>
-                        <html_symbol>&amp;pound;</html_symbol>
-                        <decimal_places>2</decimal_places>
-                        <decimal_separater>.</decimal_separater>
-                        <thousand_separater>,</thousand_separater>
                     </record>
                 </table>
             </add>
