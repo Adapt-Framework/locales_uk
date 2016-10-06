@@ -13,10 +13,6 @@ namespace adapt\locales\uk{
         
         public function boot(){
             if (parent::boot()){
-
-                $english = new model_language();
-                $english->load_by_name('english_uk');
-                $this->language_id = $english->language_id;
                 
                 /* Add the validators */
                 $this->sanitize->add_validator('uk_phone', "^(\+44|0)(1[0-9]{8,9}|[235789][0-9]{9,9}|[58]00[0-9]{6,6})$");
