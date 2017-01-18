@@ -226,20 +226,6 @@
                         <max_length>12</max_length>
                     </record>
                 </table>
-                <table name="language">
-                    <record>
-                        <name>english_uk</name>
-                        <short_code>en</short_code>
-                        <long_code>en-uk</long_code>
-                        <label>English (UK)</label>
-                    </record>
-                    <record>
-                        <name>pirate</name>
-                        <short_code>ya</short_code>
-                        <long_code>ya-ar</long_code>
-                        <label>Pirate International (Yaar)</label>
-                    </record>
-                </table>
             </add>
         </schema>
         <settings>
