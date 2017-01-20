@@ -29,6 +29,10 @@
                 <name>adapt</name>
                 <version>2.0</version>
             </bundle>
+            <bundle>
+                <name>language_en_gb</name>
+                <version>1</version>
+            </bundle>
         </depends_on>
         <works_with>
             <bundle>
@@ -228,6 +232,20 @@
                 </table>
             </add>
         </schema>
+        <language_strings>
+            <string key="Unitied Kingdom" language="en_gb">Unitied Kingdom</string>
+            <string key="Home" language="en_gb">Home</string>
+            <string key="Mobile" language="en_gb">Mobile</string>
+            <string key="Work" language="en_gb">Work</string>
+            <string key="Flat details" language="en_gb">Flat details</string>
+            <string key="House or Building Name" language="en_gb">House or Building Name</string>
+            <string key="House or Building Number" language="en_gb">House or Building Number</string>
+            <string key="Street" language="en_gb">Street</string>
+            <string key="District" language="en_gb">District</string>
+            <string key="Town or City" language="en_gb">Town or City</string>
+            <string key="County" language="en_gb">County</string>
+            <string key="Postcode" language="en_gb">Postcode</string>
+        </language_strings>
         <settings>
             <category name="Default locales">
                 <setting>
