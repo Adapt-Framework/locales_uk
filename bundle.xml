@@ -22,10 +22,6 @@
                 <version>1.0</version>
             </bundle>
             <bundle>
-                <name>currency_eur</name>
-                <version>1.0</version>
-            </bundle>
-            <bundle>
                 <name>adapt</name>
                 <version>2.0</version>
             </bundle>
