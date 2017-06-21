@@ -4,7 +4,7 @@
         <name>locales_uk</name>
         <label>UK Locality</label>
         <type>extension</type>
-        <version>1.0.0</version>
+        <version>0.8.0</version>
         <namespace>\adapt\locales\uk</namespace>
         <version_status>release</version_status>
         <availability>public</availability>
@@ -15,11 +15,11 @@
         <depends_on>
             <bundle>
                 <name>locales</name>
-                <version>1.0</version>
+                <version>0.8</version>
             </bundle>
             <bundle>
                 <name>currency_gbp</name>
-                <version>1.0</version>
+                <version>0.9</version>
             </bundle>
             <bundle>
                 <name>adapt</name>
@@ -27,13 +27,13 @@
             </bundle>
             <bundle>
                 <name>language_en_gb</name>
-                <version>1</version>
+                <version>0.7</version>
             </bundle>
         </depends_on>
         <works_with>
             <bundle>
                 <name>locales</name>
-                <version>1.0</version>
+                <version>0.8</version>
             </bundle>
         </works_with>
         <schema>
